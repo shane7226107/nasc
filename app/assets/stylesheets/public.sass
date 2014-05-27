@@ -11,10 +11,11 @@ body
 .carousel
 	width: 40%
 	margin-left: 33%
-	img
-		margin: auto
-		height: 300px !important
+	.carousel-photo
 		width: 100%
+		height: 300px		
+		background-position: center
+		background-size: cover
 	.control-card
 		width: 25%
 		height: 50px
@@ -49,12 +50,16 @@ body
 		background-color: rgba(0,0,0,0)
 
 .photos-container
-	color: white
-	margin-left: 5%
-	.item 		
-		float: left
-		margin: 5px
-		background: #CCC
-		color: black
-	img		
-		width: 400px
+	.item
+		height: 15em
+		margin-left: 1em
+		position: relative
+		img
+			height: 12em
+		.description
+			height: 3em
+			display: inherit
+			position: absolute
+			left: 0px
+			bottom: 0px
+			overflow: hidden
