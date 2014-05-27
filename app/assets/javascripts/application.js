@@ -17,4 +17,5 @@
 //= require jquery.fullPage.min
 //= require jquery.easings.min
 //= require imagesloaded.min
+//= require public
 //= require_tree .

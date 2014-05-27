@@ -1,0 +1,20 @@
+zh-TW:
+  public:
+    index:
+      hello: "哈摟"
+      alltime_caring: "全心關懷 時刻守護"
+      training: "演訓頻道"
+      activities: "活動訊息"
+      career: "人事徵才"
+  partials:
+    navbar:
+      about: "關於空勤"
+      missions: "五大任務"
+      gallery: "影像專區"
+      nasc_zone: "空勤專區"
+      missions_description: "任務介紹"
+      air_essays: "飛行專欄"
+      statistics: "績效統計"
+      languages: "選擇語言"
+      search: "搜尋"
+      search_content: "搜尋網站內容"
