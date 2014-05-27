@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nasc</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>  
+  <%= csrf_meta_tags %>
+</head>
+
+<!-- <body ng-app="ngApp"> -->
+<body>
+
+<%= render partial:"/partials/navbar" %>
+<%= yield %>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.navbar-container
+  nav.navbar.navbar-default role="navigation" 
+    .container-fluid
+      /! Brand and toggle get grouped for better mobile display
+      .navbar-header
+        button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand href="/"
+          img src="/images/logo.png"
+      /! Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a href="/"  #{ t ".about" }
+          li
+            a href="/missions"  #{ t ".missions" }
+          li
+            a href="/photos"  #{ t ".gallery" }
+          li.dropdown
+            a.dropdown-toggle data-toggle="dropdown" href="#" 
+              | #{ t ".nasc_zone" }
+              b.caret
+            ul.dropdown-menu
+              li
+                a href="/"  #{ t ".air_essays" }
+              li
+                a href="/"  #{ t ".statistics" }
+              li
+                a href="/"  #{ t ".missions_description" }
+          li.dropdown
+            a.dropdown-toggle data-toggle="dropdown" href="#" 
+              | #{ t ".languages" }
+              b.caret
+            ul.dropdown-menu
+              li
+                a href="/set_locale/en"  English
+              li
+                a href="/set_locale/zh-TW"  中文                             
+        form.navbar-form.navbar-right role="search" 
+          .form-group
+            input.form-control placeholder="#{ t '.search_content' }" type="text" 
+          button.btn.btn-default type="submit"  #{ t ".search" }
