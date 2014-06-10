@@ -1,5 +1,13 @@
+# encoding: utf-8
 NASC::Application.routes.draw do
 
+  # 管理者(包括資管人員和各處室)
+  devise_for :users
+  get "backoffice" => "user#index"
+  get "backoffice/missions" => "user#missions"
+  get "backoffice/photos" => "user#photos"
+
+  # 一般民眾
   get "missions" => "public#missions"
   get "photos" => "public#photos"
   get "set_locale/:locale" => "public#set_locale"

@@ -34,4 +34,9 @@ NASC::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Use Mailcatcher Gem to send/recieve email in dev mode
+  config.action_mailer.default_url_options = { :host => "localhost" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
 end
