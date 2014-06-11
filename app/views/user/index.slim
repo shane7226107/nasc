@@ -7,7 +7,7 @@
 				/! Wrapper for slides
 				.carousel-inner
 					- @all_time_caring.articles.each_with_index do |e, index|
-						- if index == 1
+						- if index == 0
 							.item.active
 								.carousel-photo style="background-image:url('#{e.photo}');"
 								.carousel-caption
@@ -27,17 +27,25 @@
 			.tabs
 				/! Nav tabs
 				ul.nav.nav-tabs
-					li.active
-						a data-toggle="tab" href="#a"  #{ t ".all_time_caring" }
-					li
-						a data-toggle="tab" href="#home"  #{ t ".training" }
-					li
-						a data-toggle="tab" href="#profile"  #{ t ".activities" }
-					li
-						a data-toggle="tab" href="#messages"  #{ t ".career" }				  
+					- @boards.each_with_index do |e, index|
+						- if index == 0
+							li.active
+								a data-toggle="tab" href="#board#{index}" = e.name
+						- else
+							li
+								a data-toggle="tab" href="#board#{index}" = e.name
+
 				/! Tab panes
 				.tab-content
-					#a.tab-pane.active 全心關懷 時刻守護...
-					#home.tab-pane 演訓頻道...
-					#profile.tab-pane 活動訊息...
-					#messages.tab-pane 人事徵才...				  
+					- @boards.each_with_index do |e, index|
+						- if index == 0
+							.tab-pane.active id="board#{index}"
+								| #{e.name}
+						- else
+							.tab-pane id="board#{index}"
+								| #{e.name}
+
+					/ #a.tab-pane.active 全心關懷 時刻守護...
+					/ #home.tab-pane 演訓頻道...
+					/ #profile.tab-pane 活動訊息...
+					/ #messages.tab-pane 人事徵才...				  
