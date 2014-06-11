@@ -4,12 +4,13 @@ class ArticlesController < ApplicationController
 	# return an HTML form for creating a new article
 	def new
 	end
+	# return an HTML form for editing an article
+	def edit
+	end
 
 	# CRUD actions
 	def create
-	end
-	def edit
-	end
+	end	
 	def update
 	end
 	def destroy
