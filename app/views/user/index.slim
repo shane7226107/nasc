@@ -40,16 +40,20 @@
 					- @boards.each_with_index do |board, index|						
 						- if index == 0
 							.tab-pane.active id="board#{index}"
-								button type="button" class="btn btn-primary" 新增
+								button type="button" class="btn btn-primary"
+									span.glyphicon.glyphicon-plus 新增
 								ul
 									- board.articles.each do |article|
 										li
 											| #{article.title} &nbsp;&nbsp;
-											button type="button" class="btn btn-default" 編輯
+											a href=""												
+												button type="button" class="btn btn-default"
+													span.glyphicon.glyphicon-pencil 編輯
 
 						- else
 							.tab-pane id="board#{index}"
-								button type="button" class="btn btn-primary" 新增
+								button type="button" class="btn btn-primary"
+									span.glyphicon.glyphicon-plus 新增
 								ul
 									- board.articles.each do |article|
 										li = article.title 
