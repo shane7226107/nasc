@@ -1,4 +1,5 @@
 .my_form
+  h1 新增文章
   = form_for :article, :url=>"/articles", :method=>"post", :html=>{:class=>"form-horizontal", "multipart"=>"true"} do |f|
     .form-group
       label.col-sm-3.control-label for="" 標題
