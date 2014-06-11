@@ -1,5 +1,5 @@
 
-.the_form
+.my_form
   = form_for :article, :url=>"/articles/create", :method=>"post", :html=>{:class=>"form-horizontal", "multipart"=>"true"} do |f|
     .form-group
       label.col-sm-3.control-label for="" #{ t "dashboard.my_courses.course_name" }
@@ -12,5 +12,4 @@
 
       hr
 
-    .align-right
-      input.btn.btn-primary type="submit" 確認
+    input.btn.btn-primary.pull-right type="submit"
