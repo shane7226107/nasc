@@ -40,8 +40,9 @@
 					- @boards.each_with_index do |board, index|						
 						- if index == 0
 							.tab-pane.active id="board#{index}"
-								button type="button" class="btn btn-primary"
-									span.glyphicon.glyphicon-plus 新增
+								a href="/articles/new"
+									button type="button" class="btn btn-primary"
+										span.glyphicon.glyphicon-plus 新增
 								ul
 									- board.articles.each do |article|
 										li
