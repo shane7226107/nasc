@@ -42,7 +42,10 @@
 							.tab-pane.active id="board#{index}"
 								ul
 									- board.articles.each do |article|
-										li = article.title
+										li
+											| #{article.title} &nbsp;&nbsp;
+											button type="button" class="btn btn-default" 編輯
+
 						- else
 							.tab-pane id="board#{index}"
 								ul
