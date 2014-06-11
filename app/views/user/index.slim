@@ -40,7 +40,7 @@
 					- @boards.each_with_index do |board, index|						
 						- if index == 0
 							.tab-pane.active id="board#{index}"
-								a href="/articles/new"
+								a href="/articles/new?board_id=#{board.id}"
 									button type="button" class="btn btn-primary"
 										span.glyphicon.glyphicon-plus 新增
 								ul

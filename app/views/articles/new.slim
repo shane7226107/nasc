@@ -1,14 +1,22 @@
-
 .my_form
-  = form_for :article, :url=>"/articles/create", :method=>"post", :html=>{:class=>"form-horizontal", "multipart"=>"true"} do |f|
+  = form_for :article, :url=>"/articles", :method=>"post", :html=>{:class=>"form-horizontal", "multipart"=>"true"} do |f|
     .form-group
-      label.col-sm-3.control-label for="" #{ t "dashboard.my_courses.course_name" }
+      label.col-sm-3.control-label for="" 標題
       .col-sm-9
-        input.form-control type="text" name="course[name]"
+        input.form-control type="text" name="article[title]"
     .form-group
-      label.col-sm-3.control-label for="" #{ t "dashboard.my_courses.course_name" }
+      label.col-sm-3.control-label for="" 內文
       .col-sm-9
-        input.form-control type="text" name="course[name]"
+        input.form-control type="text" name="article[text]"
+    .form-group
+      label.col-sm-3.control-label for="" 上傳照片
+      .col-sm-9
+        input.form-control type="text" name="article[photo]"
+    .form-group
+      label.col-sm-3.control-label for="" 嵌入內容
+      .col-sm-9
+        input.form-control type="text" name="article[embed]"
+    input.hide name="article[board_id]" value="#{@board_id}"
 
       hr
 
