@@ -37,9 +37,10 @@
 
 				/! Tab panes
 				.tab-content
-					- @boards.each_with_index do |board, index|
+					- @boards.each_with_index do |board, index|						
 						- if index == 0
 							.tab-pane.active id="board#{index}"
+								button type="button" class="btn btn-primary" 新增
 								ul
 									- board.articles.each do |article|
 										li
@@ -48,6 +49,7 @@
 
 						- else
 							.tab-pane id="board#{index}"
+								button type="button" class="btn btn-primary" 新增
 								ul
 									- board.articles.each do |article|
 										li = article.title 
