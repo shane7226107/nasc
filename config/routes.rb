@@ -12,6 +12,9 @@ NASC::Application.routes.draw do
   get "photos" => "public#photos"
   get "set_locale/:locale" => "public#set_locale"
 
+  # Resources
+  resources :articles
+
   root :to => 'public#index'
 
   # The priority is based upon order of creation:

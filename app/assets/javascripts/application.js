@@ -17,5 +17,7 @@
 //= require jquery.fullPage.min
 //= require jquery.easings.min
 //= require imagesloaded.min
+//= require angular
 //= require public
+//= require ng-app
 //= require_tree .
