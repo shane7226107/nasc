@@ -37,15 +37,14 @@
 
 				/! Tab panes
 				.tab-content
-					- @boards.each_with_index do |e, index|
+					- @boards.each_with_index do |board, index|
 						- if index == 0
 							.tab-pane.active id="board#{index}"
-								| #{e.name}
+								ul
+									- board.articles.each do |article|
+										li = article.title
 						- else
 							.tab-pane id="board#{index}"
-								| #{e.name}
-
-					/ #a.tab-pane.active 全心關懷 時刻守護...
-					/ #home.tab-pane 演訓頻道...
-					/ #profile.tab-pane 活動訊息...
-					/ #messages.tab-pane 人事徵才...				  
+								ul
+									- board.articles.each do |article|
+										li = article.title 
