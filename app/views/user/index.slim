@@ -1,49 +1,22 @@
-#ng-public-container ng-controller="publicCtrl"
+#ng-index-container ng-controller="indexCtrl"
 	.row		
 		.col-md-12
 			#carousel-example-generic.carousel.slide data-ride="carousel" 
 				/! Indicators
 				ol.carousel-indicators
-					/ li.active data-slide-to="0" data-target="#carousel-example-generic" 
-					/ li data-slide-to="1" data-target="#carousel-example-generic" 
-					/ li data-slide-to="2" data-target="#carousel-example-generic"
-					/ li data-slide-to="3" data-target="#carousel-example-generic" 
 				/! Wrapper for slides
-				.carousel-inner					
-					.item.active
-						.carousel-photo style="background-image:url('/images/news/1.jpg');"
-						.carousel-caption
-							| 103年5月18日
-							br
-							| 春發益商船船員緊急後送
-					.item
-						.carousel-photo style="background-image:url('/images/news/2.jpg');"
-						.carousel-caption
-							| 103年5月18日
-							br
-							| 春發益商船船員緊急後送
-					.item
-						.carousel-photo style="background-image:url('/images/news/3.jpg');"
-						.carousel-caption
-							| 103年5月18日
-							br
-							| 春發益商船船員緊急後送
-					.item
-						.carousel-photo style="background-image:url('/images/news/4.jpg');"
-						.carousel-caption
-							| 103年5月18日
-							br
-							| 春發益商船船員緊急後送					
-				/ .my-controls			  	
-				/ 	a data-slide-to="0" data-target="#carousel-example-generic"
-				/ 		.control-card.inline-block
-				/ 	a data-slide-to="1" data-target="#carousel-example-generic"
-				/ 		.control-card.inline-block
-				/ 	a data-slide-to="2" data-target="#carousel-example-generic"
-				/ 		.control-card.inline-block
-				/ 	a data-slide-to="3" data-target="#carousel-example-generic"	
-				/ 		.control-card.inline-block
-						
+				.carousel-inner
+					- @all_time_caring.articles.each_with_index do |e, index|
+						- if index == 0
+							.item.active
+								.carousel-photo style="background-image:url('#{e.photo}');"
+								.carousel-caption
+									= e.title
+						- else
+							.item
+								.carousel-photo style="background-image:url('#{e.photo}');"
+								.carousel-caption
+									= e.title
 				/! Controls
 				a.left.carousel-control data-slide="prev" href="#carousel-example-generic" 
 					span.glyphicon.glyphicon-chevron-left
@@ -54,17 +27,34 @@
 			.tabs
 				/! Nav tabs
 				ul.nav.nav-tabs
-					li.active
-						a data-toggle="tab" href="#a"  #{ t ".alltime_caring" }
-					li
-						a data-toggle="tab" href="#home"  #{ t ".training" }
-					li
-						a data-toggle="tab" href="#profile"  #{ t ".activities" }
-					li
-						a data-toggle="tab" href="#messages"  #{ t ".career" }				  
+					- @boards.each_with_index do |e, index|
+						- if index == 0
+							li.active
+								a data-toggle="tab" href="#board#{index}" = e.name
+						- else
+							li
+								a data-toggle="tab" href="#board#{index}" = e.name
+
 				/! Tab panes
 				.tab-content
-					#a.tab-pane.active 全心關懷 時刻守護...
-					#home.tab-pane 演訓頻道...
-					#profile.tab-pane 活動訊息...
-					#messages.tab-pane 人事徵才...				  
+					- @boards.each_with_index do |board, index|						
+						- if index == 0
+							.tab-pane.active id="board#{index}"
+								a href="/articles/new?board_id=#{board.id}"
+									button type="button" class="btn btn-primary"
+										span.glyphicon.glyphicon-plus 新增
+								ul
+									- board.articles.each do |article|
+										li
+											| #{article.title} &nbsp;&nbsp;
+											a href=""												
+												button type="button" class="btn btn-default"
+													span.glyphicon.glyphicon-pencil 編輯
+
+						- else
+							.tab-pane id="board#{index}"
+								button type="button" class="btn btn-primary"
+									span.glyphicon.glyphicon-plus 新增
+								ul
+									- board.articles.each do |article|
+										li = article.title 

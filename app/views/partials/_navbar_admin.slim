@@ -16,22 +16,25 @@
           li
             a.admin_mode 管理者模式
           li
-            a href="/"  #{ t "partials.navbar.about" }
+            a href="/backoffice"  #{ t "partials.navbar.about" }
           li
-            a href="/missions"  #{ t "partials.navbar.missions" }
+            a href="/backoffice/missions"  #{ t "partials.navbar.missions" }
           li
-            a href="/photos"  #{ t "partials.navbar.gallery" }
+            a href="/backoffice/photos"  #{ t "partials.navbar.gallery" }          
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#" 
               | #{ t "partials.navbar.nasc_zone" }
               b.caret
             ul.dropdown-menu
               li
-                a href="/"  #{ t "partials.navbar.air_essays" }
+                a href="/backoffice"  #{ t "partials.navbar.air_essays" }
               li
-                a href="/"  #{ t "partials.navbar.statistics" }
+                a href="/backoffice"  #{ t "partials.navbar.statistics" }
               li
-                a href="/"  #{ t "partials.navbar.missions_description" }
+                a href="/backoffice"  #{ t "partials.navbar.missions_description" }
+        ul.nav.navbar-nav.pull-right
+          li
+            = link_to "登出管理者模式", destroy_user_session_path, :method => :delete 
         /   li.dropdown
         /     a.dropdown-toggle data-toggle="dropdown" href="#" 
         /       | #{ t "partials.navbar.languages" }
