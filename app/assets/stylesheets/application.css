@@ -42,4 +42,22 @@
 .inline-block{
 	display: inline-block;
 }
-	
+
+.align-right{
+	text-align: right;
+}	
+
+.align-left{
+	text-align: left;
+}
+
+.align-center{
+	text-align: center;
+}		
+
+.flash-msg{
+	position: fixed;
+	z-index: 9999;
+	bottom: 30px;
+	right: 100px;
+}

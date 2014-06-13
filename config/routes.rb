@@ -1,11 +1,12 @@
 # encoding: utf-8
 NASC::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   # 管理者(包括資管人員和各處室)
-  devise_for :users
-  get "backoffice" => "user#index"
-  get "backoffice/missions" => "user#missions"
-  get "backoffice/photos" => "user#photos"
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  get "backoffice" => "users#index"
+  get "backoffice/missions" => "users#missions"
+  get "backoffice/photos" => "users#photos"
 
   # 一般民眾
   get "missions" => "public#missions"

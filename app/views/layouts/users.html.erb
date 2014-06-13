@@ -11,6 +11,8 @@
 <%= render partial:"/partials/navbar_admin" %>
 <%= yield %>
 
+<button class="flash-msg btn btn-danger"><%= flash[:error] %></button>
+
 <%= javascript_include_tag "application"%>
 </body>
 </html>

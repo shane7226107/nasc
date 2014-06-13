@@ -36,3 +36,17 @@ articles.each do |e|
   n.id = e[:id]
   n.save
 end
+
+puts 'users...'
+users = [
+  {id:1, email:"user@gmail.com", password:"12345678"},
+  {id:2, email:"user2@gmail.com", password:"12345678"},
+  {id:3, email:"admin@gmail.com", password:"12345678", admin:true}
+]  
+
+User.delete_all
+users.each do |e|
+  n = User.new e
+  n.id = e[:id]
+  n.save
+end

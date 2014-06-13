@@ -3,12 +3,12 @@ class BoardsController < ApplicationController
 
   # return an HTML form for creating a new board
   def new
-    render layout:"user"
+    render layout:"users"
   end
   # return an HTML form for editing an board
   def edit
     @board = Board.find params[:id]
-    render layout:"user"
+    render layout:"users"
   end
   # return specific instance
   def show

@@ -4,17 +4,17 @@ class ArticlesController < ApplicationController
 	# return an HTML form for creating a new article
 	def new
 		@board_id = params[:board_id]
-		render layout:"user"
+		render layout:"users"
 	end
 	# return an HTML form for editing an article
 	def edit
 		@article = Article.find params[:id]
-		render layout:"user"
+		render layout:"users"
 	end
 	# return specific instance
 	def show
 		@article = Article.find params[:id]
-		render layout:"user"
+		render layout:"users"
 	end
 
 	# CRUD actions
