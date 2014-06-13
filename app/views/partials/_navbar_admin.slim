@@ -14,7 +14,7 @@
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
           li
-            a.admin_mode 管理者模式
+            a.admin_mode href="/backoffice" 管理者模式
           li
             a href="/backoffice"  #{ t "partials.navbar.about" }
           li
@@ -26,12 +26,9 @@
               | #{ t "partials.navbar.nasc_zone" }
               b.caret
             ul.dropdown-menu
-              li
-                a href="/backoffice"  #{ t "partials.navbar.air_essays" }
-              li
-                a href="/backoffice"  #{ t "partials.navbar.statistics" }
-              li
-                a href="/backoffice"  #{ t "partials.navbar.missions_description" }
+              - @boards.each_with_index do |board, index|
+                li
+                  a href="/boards/#{board.id}/edit" #{board.name}
         ul.nav.navbar-nav.pull-right
           li
             = link_to "登出管理者模式", destroy_user_session_path, :method => :delete 

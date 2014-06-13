@@ -34,6 +34,9 @@
 						- else
 							li
 								a data-toggle="tab" href="#board#{index}" = e.name
+					li
+						a href="/boards/new"
+							span.glyphicon.glyphicon-plus  新增版面
 
 				/! Tab panes
 				.tab-content
@@ -42,19 +45,21 @@
 							.tab-pane.active id="board#{index}"
 								a href="/articles/new?board_id=#{board.id}"
 									button type="button" class="btn btn-primary"
-										span.glyphicon.glyphicon-plus 新增
+										span.glyphicon.glyphicon-plus 新增文章
+								a href="/boards/#{board.id}/edit"
+									button type="button" class="btn btn-primary"
+										span.glyphicon.glyphicon-pencil 編輯版面
 								ul
-									- board.articles.each do |article|
+									- board.articles.each do |article|									
 										li
-											| #{article.title} &nbsp;&nbsp;
-											a href=""												
-												button type="button" class="btn btn-default"
-													span.glyphicon.glyphicon-pencil 編輯
-
+											a href="/articles/#{article.id}/edit" #{article.title} 
 						- else
 							.tab-pane id="board#{index}"
 								button type="button" class="btn btn-primary"
-									span.glyphicon.glyphicon-plus 新增
+									span.glyphicon.glyphicon-plus 新增文章
+								a href="/boards/#{board.id}/edit"
+									button type="button" class="btn btn-primary"
+										span.glyphicon.glyphicon-pencil 編輯版面
 								ul
 									- board.articles.each do |article|
-										li = article.title 
+										li = article.title

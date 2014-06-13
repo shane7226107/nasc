@@ -3,4 +3,6 @@ class Article < ActiveRecord::Base
   attr_accessible :id if Rails.env.development?
 
   belongs_to :board
+
+  mount_uploader :photo, PhotoUploader
 end

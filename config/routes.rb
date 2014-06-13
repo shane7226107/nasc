@@ -15,6 +15,10 @@ NASC::Application.routes.draw do
   # Resources
   resources :articles
 
+  # Boards
+  resources :boards
+  # get "boards/:id" => "boards#show"
+
   root :to => 'public#index'
 
   # The priority is based upon order of creation:

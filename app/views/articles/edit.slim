@@ -1,0 +1,25 @@
+.my_form
+  h1 編輯文章
+  = form_for :article, :url=>"/articles/#{@article.id}", :method=>"put", :html=>{:class=>"form-horizontal", "multipart"=>"true"} do |f|
+    .form-group
+      label.col-sm-3.control-label for="" 標題
+      .col-sm-9
+        input.form-control type="text" name="article[title]" value="#{@article.title}"
+    .form-group
+      label.col-sm-3.control-label for="" 內文
+      .col-sm-9
+        textarea.form-control rows="4" name="article[text]"
+          | #{@article.text}
+    .form-group
+      label.col-sm-3.control-label for="" 上傳照片
+      .col-sm-9
+       input.form-control type="file" name="article[photo]"
+    .form-group
+      label.col-sm-3.control-label for="" 嵌入內容
+      .col-sm-9
+        input.form-control type="text" name="article[embed]"  value="#{@article.embed}"
+    input.hide name="article[board_id]" value="#{@article.board_id}"
+
+      hr
+    = link_to '刪除文章', "/articles/#{@article.id}", :method => :delete
+    input.btn.btn-primary.pull-right type="submit"

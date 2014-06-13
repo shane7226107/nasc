@@ -1,0 +1,16 @@
+.my_form
+  h1 編輯版面
+  = form_for :board, :url=>"/boards/#{@board.id}", :method=>"put", :html=>{:class=>"form-horizontal", "multipart"=>"true"} do |f|
+    .form-group
+      label.col-sm-3.control-label for="" 標題
+      .col-sm-9
+        input.form-control type="text" name="board[name]" value="#{@board.name}"
+    .form-group
+      label.col-sm-3.control-label for="" 管理者
+      .col-sm-9
+        input.form-control type="string" value="#{current_user.email}" disabled="true"
+
+    hr
+    
+    = link_to '刪除版面', "/boards/#{@board.id}", :method => :delete
+    input.btn.btn-primary.pull-right type="submit"
