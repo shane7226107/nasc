@@ -60,4 +60,6 @@
 	z-index: 9999;
 	bottom: 30px;
 	right: 100px;
+	background: red;
+	padding: 5px;
 }
